@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Navbar from "@/components/Navbar";
+import HeroCarousel from "@/components/HeroCarousel";
 import { FaGraduationCap } from "react-icons/fa6";
 import { FaCalendarCheck } from "react-icons/fa";
 import { FaChartBar } from "react-icons/fa";
@@ -42,36 +44,10 @@ export default function Home(){
   const selectedTab = intakeTabs[activeTab];
 
   return (
-    <main>
-      <nav className="items-end md:flex  gap-8">
-          <a href="#home" className="hover:text-blue-900 transition">Home</a>
-          <a href="#about" className="hover:text-blue-900 transition">About Us </a>
-          <a href="#services" className="hover:text-blue-900 transition">Professional Services</a>
-          <a href="#contact" className="hover:text-blue-900 transition">Training and Consultancy</a>
-          <a href="#contact" className="hover:text-blue-900 transition">Bookstore</a>
-        </nav>
-        <section className="flex flex-col gap-0 items-center justify-center text-center py-0">
-          <div
-            className="w-full flex flex-col gap-4 items-center justify-center text-center py-20 bg-cover bg-center relative"
-            style={{ backgroundImage: "url('/images/pp.jpg')" }}
-          >
-            <div className="absolute inset-0 bg-black/50" />
-            <div className="relative z-10 flex flex-col items-center justify-center text-center gap-4">
-
-              <button className="bg-red-200 border-red-900 text-red-800  px-3 py-1 rounded-3xl ">Best CIMA TRAINING PARTNER IN GHANA </button>
-              <h1 className="text-3xl font-bold w-250 text-white p-4  ">Smart Technology. Expert Tuition. Proven Pathways to First-Time PMP Success.</h1>
-              <p className="text-lg text-white  text-center w-200">
-                The Chartered Institute of Management Accountants (CIMA) is the world's largest professional body of management accountants. Become a strategic leader equipped for the modern digital business landscape.
-              </p>
-              <div className="flex gap-20 items-center p-3 ">
-                <button className="bg-red-700 border-red-900 text-white text-bold px-3 py-2 rounded-1xl  ">EXPLORE CIMA PROGRAMS </button>
-                <button className=" border-white text-white text-bold px-3 py-2 rounded-1xl  ">VISIT BOOKSTORE</button>
-                <button className="text-bold text-white bg- px-3 py-2 rounded-1xl  ">MAKE ENQUIRY </button>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="-mt-1">
+    <main className="min-h-screen bg-white">
+      <Navbar />
+      <HeroCarousel />
+      <section className="-mt-1">
           <div  className="flex flex-col md:flex-row gap-4 justify-evenly text-center bg-blue-900 text-white py-20">
           <div>
             <p className="text-3xl font-bold">2,000+</p>
