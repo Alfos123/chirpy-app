@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import { ChevronDown, ShoppingBag, Menu, X } from "lucide-react";
 import ContactModal from "./ContactModal";
 
@@ -61,7 +62,7 @@ export default function Navbar() {
         {/* Main Nav Container */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between" ref={dropdownRef}>
           {/* Logo */}
-          <a href="#" className="flex items-center space-x-3 group">
+          <Link href="/" className="flex items-center space-x-3 group">
             <img
               src="/images/logo.svg"
               alt="Aspire Executive Tuition"
@@ -85,17 +86,17 @@ export default function Navbar() {
                 </span>
               </div>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Links */}
           <nav className="hidden lg:flex items-center space-x-7">
             {/* Home Link (Red Accent) */}
-            <a
-              href="#"
+            <Link
+              href="/"
               className="relative py-2 text-red-600 font-bold tracking-wide flex items-center after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:rounded-full"
             >
               Home
-            </a>
+            </Link>
 
             {/* About Us Dropdown */}
             <div className="relative">
@@ -118,14 +119,14 @@ export default function Navbar() {
                   className="absolute top-full left-0 mt-1 w-52 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 z-50 animate-fadeIn"
                 >
                   {dropdowns.about.items.map((item) => (
-                    <a
+                    <Link
                       key={item.label}
                       href={item.href}
                       onClick={() => setActiveDropdown(null)}
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 font-medium transition-colors"
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
@@ -152,14 +153,14 @@ export default function Navbar() {
                   className="absolute top-full left-0 mt-1 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 z-50 animate-fadeIn"
                 >
                   {dropdowns.programs.items.map((item) => (
-                    <a
+                    <Link
                       key={item.label}
                       href={item.href}
                       onClick={() => setActiveDropdown(null)}
                       className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 font-medium transition-colors border-b border-gray-50 last:border-0"
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
@@ -186,26 +187,26 @@ export default function Navbar() {
                   className="absolute top-full left-0 mt-1 w-56 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 z-50 animate-fadeIn"
                 >
                   {dropdowns.training.items.map((item) => (
-                    <a
+                    <Link
                       key={item.label}
                       href={item.href}
                       onClick={() => setActiveDropdown(null)}
                       className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 font-medium transition-colors"
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
             </div>
 
             {/* Bookstore Link */}
-            <a
+            <Link
               href="#bookstore"
               className="py-2 font-medium text-gray-700 hover:text-red-600 transition-colors"
             >
               Bookstore
-            </a>
+            </Link>
           </nav>
 
           {/* Right Action Icons & Buttons */}
@@ -222,12 +223,12 @@ export default function Navbar() {
             </button>
 
             {/* Red Contact Us Button */}
-            <button
-              onClick={() => setIsContactOpen(true)}
-              className="bg-red-600 hover:bg-red-700 text-white rounded-full px-5 py-2 font-semibold shadow-md hover:shadow-red-600/30 transition-all text-sm tracking-wide"
+            <Link
+              href="/contact"
+              className="bg-red-600 hover:bg-red-700 text-white rounded-full px-5 py-2 font-semibold shadow-md hover:shadow-red-600/30 transition-all text-sm tracking-wide inline-block"
             >
               Contact Us
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -256,13 +257,13 @@ export default function Navbar() {
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-gray-100 bg-white px-4 pt-3 pb-6 space-y-3 shadow-xl max-h-[85vh] overflow-y-auto">
             {/* Home Link */}
-            <a
-              href="#"
+            <Link
+              href="/"
               onClick={() => setMobileMenuOpen(false)}
               className="block px-3 py-2 text-base font-bold text-red-600 bg-red-50 rounded-xl"
             >
               Home
-            </a>
+            </Link>
 
             {/* Mobile About Us Accordion */}
             <div className="border-b border-gray-100 pb-2">
@@ -280,14 +281,14 @@ export default function Navbar() {
               {activeMobileSection === "about" && (
                 <div className="pl-6 space-y-1 mt-1">
                   {dropdowns.about.items.map((item) => (
-                    <a
+                    <Link
                       key={item.label}
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className="block py-1.5 text-sm text-gray-600 hover:text-red-600"
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
@@ -309,14 +310,14 @@ export default function Navbar() {
               {activeMobileSection === "programs" && (
                 <div className="pl-6 space-y-1 mt-1">
                   {dropdowns.programs.items.map((item) => (
-                    <a
+                    <Link
                       key={item.label}
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className="block py-1.5 text-sm text-gray-600 hover:text-red-600"
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
@@ -338,39 +339,37 @@ export default function Navbar() {
               {activeMobileSection === "training" && (
                 <div className="pl-6 space-y-1 mt-1">
                   {dropdowns.training.items.map((item) => (
-                    <a
+                    <Link
                       key={item.label}
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className="block py-1.5 text-sm text-gray-600 hover:text-red-600"
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
             </div>
 
             {/* Mobile Bookstore */}
-            <a
+            <Link
               href="#bookstore"
               onClick={() => setMobileMenuOpen(false)}
               className="block px-3 py-2 text-base font-semibold text-gray-800 hover:text-red-600"
             >
               Bookstore
-            </a>
+            </Link>
 
             {/* Mobile Red Contact Us Button */}
             <div className="pt-4">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  setIsContactOpen(true);
-                }}
-                className="w-full bg-red-600 hover:bg-red-700 text-white rounded-full py-3 font-semibold shadow-md text-center text-sm"
+              <Link
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full bg-red-600 hover:bg-red-700 text-white rounded-full py-3 font-semibold shadow-md text-center text-sm block"
               >
                 Contact Us
-              </button>
+              </Link>
             </div>
           </div>
         )}

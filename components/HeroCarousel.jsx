@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 import { ChevronLeft, ChevronRight, Award } from "lucide-react";
 import ContactModal from "./ContactModal";
 
@@ -83,28 +84,35 @@ export default function HeroCarousel() {
               idx === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
             }`}
           >
-            {/* Background Image */}
-            <div
-              className="absolute inset-0 bg-cover bg-center transform scale-105 transition-transform duration-10000 ease-out"
+            {/* Background Image Link */}
+            <Link
+              href={slide.primaryHref}
+              className="absolute inset-0 bg-cover bg-center transform scale-105 transition-transform duration-10000 ease-out cursor-pointer block"
               style={{ backgroundImage: `url('${slide.image}')` }}
+              aria-label={slide.title}
             />
             {/* Dark Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-950/50" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-950/50 pointer-events-none" />
           </div>
         ))}
 
         {/* Content Container */}
         <div className="relative z-20 max-w-5xl mx-auto px-4 py-16 text-center flex flex-col items-center justify-center space-y-6">
-          {/* Top Pill Badge */}
-          <div className="inline-flex items-center space-x-2 bg-red-950/80 border border-red-700/60 text-red-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-lg animate-fadeIn">
+          {/* Top Pill Badge - Links to Program */}
+          <Link
+            href={slides[currentSlide].primaryHref}
+            className="inline-flex items-center space-x-2 bg-red-950/80 hover:bg-red-900 border border-red-700/60 text-red-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-lg animate-fadeIn transition-colors cursor-pointer"
+          >
             <Award className="w-4 h-4 text-red-500" />
             <span>{slides[currentSlide].badge}</span>
-          </div>
+          </Link>
 
-          {/* Main Title */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight max-w-4xl leading-tight text-shadow drop-shadow-md">
-            {slides[currentSlide].title}
-          </h1>
+          {/* Main Title - Links to Program */}
+          <Link href={slides[currentSlide].primaryHref} className="group">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight max-w-4xl leading-tight text-shadow drop-shadow-md group-hover:text-red-400 transition-colors">
+              {slides[currentSlide].title}
+            </h1>
+          </Link>
 
           {/* Subtitle / Description */}
           <p className="text-base sm:text-lg text-gray-200 max-w-3xl font-normal leading-relaxed text-shadow-sm">
@@ -114,20 +122,20 @@ export default function HeroCarousel() {
           {/* Action Buttons */}
           <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
             {/* Primary Red Button */}
-            <a
+            <Link
               href={slides[currentSlide].primaryHref}
               className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm tracking-wider uppercase px-7 py-3.5 rounded-xl shadow-xl hover:shadow-red-600/40 transition-all transform hover:-translate-y-0.5"
             >
               {slides[currentSlide].primaryButton}
-            </a>
+            </Link>
 
             {/* Secondary Bookstore Button */}
-            <a
+            <Link
               href="#bookstore"
               className="bg-slate-900/60 hover:bg-slate-900/90 text-white border border-white/30 font-bold text-sm tracking-wider uppercase px-7 py-3.5 rounded-xl backdrop-blur-md transition-all hover:border-white/60 transform hover:-translate-y-0.5"
             >
               VISIT BOOKSTORE
-            </a>
+            </Link>
 
             {/* Make Enquiry Button */}
             <button
