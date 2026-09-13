@@ -10,6 +10,7 @@ import { MdPhoneAndroid } from "react-icons/md";
 import { FaBookOpen } from "react-icons/fa";
 import { IoBagRemoveOutline } from "react-icons/io5";
 
+
 const intakeTabs = [
   {
     name: "ICAG INTAKE",
@@ -42,13 +43,13 @@ export default function Home(){
   const selectedTab = intakeTabs[activeTab];
 
   return (
-    <main>
-      <nav className="items-end md:flex  gap-8">
+    <main id="home">
+      <nav className="items-end md:flex gap-8">
           <a href="#home" className="hover:text-blue-900 transition">Home</a>
-          <a href="#about" className="hover:text-blue-900 transition">About Us </a>
+          <a href="#about" className="hover:text-blue-900 transition">About Us</a>
           <a href="#services" className="hover:text-blue-900 transition">Professional Services</a>
           <a href="#contact" className="hover:text-blue-900 transition">Training and Consultancy</a>
-          <a href="#contact" className="hover:text-blue-900 transition">Bookstore</a>
+          <a href="#bookstore" className="hover:text-blue-900 transition">Bookstore</a>
         </nav>
         <section className="flex flex-col gap-0 items-center justify-center text-center py-0">
           <div
@@ -91,7 +92,7 @@ export default function Home(){
           </div>
           </div>
         </section>
-        <section className="p-10">
+        <section id="about" className="p-10">
           <div className="text-3xl font-bold text-center py-10">OUR PROGRAMS- BUILT FOR YOUR SUCCESS</div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4  py-10 px-4">
 
@@ -181,7 +182,7 @@ export default function Home(){
               </div>
             </div>
 
-            <div className="border border-gray-300 p-5 rounded-lg bg-white shadow-sm flex flex-col gap-4">
+            <div id="bookstore" className="border border-gray-300 p-5 rounded-lg bg-white shadow-sm flex flex-col gap-4">
               <div className="flex items-center gap-3">
                 <FaBookOpen className="text-3xl text-red-700" />
                 <p className="text-lg font-semibold">Bookstore</p>
@@ -260,6 +261,44 @@ export default function Home(){
             </div>
           </div>
         </section>
+        <footer id="contact" className="bg-black justify-center p-10">
+          <h1 className="text-4xl font-bold text-white text-center">Ready to Start Your Professional Journey?</h1>
+          <p className="text-white text-center py-4">Thousands of professionals have advanced their careers through Aspire. Whether you're just starting out or looking to sharpen your expertise, we have a program for you.</p>
+          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+            <button className="bg-red-600 text-white px-4 py-2 rounded mt-4">ENROLL NOW </button>
+            <button className="bg-black text-white border border-white px-4 py-2 rounded mt-4">DOWNLOAD BROCHURE</button>
+          </div>
+          <section className="bg-black text-white py-10 flex flex-col md:flex-row gap-4 justify-center items-center">
+            <div>
+              <h3 className="text-lg font-semibold">Aspire Executive Institute</h3>
+              <p className="text-blue-800">Empowering global leaders through elite executive education and professional accounting excellence. Partnering with you for career-defining successes.</p>
+            </div>
+             <div>
+              <h3 className="text-lg font-semibold">Navigation</h3>
+              <div className="flex flex-col gap-2">
+                <a href="#home" className="text-blue-800 hover:text-blue-500">Home</a>
+                <a href="#about" className="text-blue-800 hover:text-blue-500">About Us</a>
+                <a href="#services" className="text-blue-800 hover:text-blue-500">Hall of Fame </a>
+                <a href="#contact" className="text-blue-800 hover:text-blue-500">Contact Us </a>
+                <a href="#bookstore" className="text-blue-800 hover:text-blue-500">Help Center</a>
+              </div>
+            </div>
+             <div>
+              <h3 className="text-lg font-semibold">Programs & Training</h3>
+              <div className="flex flex-col gap-2">
+                <a href="#home" className="text-blue-800 hover:text-blue-500">Home</a>
+                <a href="#about" className="text-blue-800 hover:text-blue-500">About Us</a>
+                <a href="#services" className="text-blue-800 hover:text-blue-500">Hall of Fame </a>
+                <a href="#contact" className="text-blue-800 hover:text-blue-500">Contact Us </a>
+                <a href="#bookstore" className="text-blue-800 hover:text-blue-500">Help Center</a>
+              </div>
+            </div>
+             <div>
+              <h3 className="text-lg font-semibold">Partnerships & Apps</h3>
+              <p className="text-blue-800">Empowering global leaders through elite executive education and professional accounting excellence. Partnering with you for career-defining successes.</p>
+            </div>
+          </section>
+        </footer>
     </main>
   )
 }
