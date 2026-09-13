@@ -8,7 +8,7 @@ export default function ContactPage() {
     <main className="min-h-screen bg-slate-50">
       <Navbar />
 
-      <section className="bg-gradient-to-r from-red-800 via-red-700 to-slate-900 text-white py-16 px-4 text-center">
+      <section className="bg-linear-to-r from-red-800 via-red-700 to-slate-900 text-white py-16 px-4 text-center">
         <div className="max-w-4xl mx-auto space-y-3">
           <span className="text-red-200 font-semibold uppercase tracking-widest text-xs">Get In Touch</span>
           <h1 className="text-4xl font-black">Contact Tuition Advisory</h1>
@@ -23,7 +23,7 @@ export default function ContactPage() {
           <h2 className="text-2xl font-bold text-gray-900">Campus & Office Information</h2>
           <div className="space-y-4 text-gray-600 text-sm">
             <div className="flex items-start space-x-3">
-              <MapPin className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+              <MapPin className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-gray-800">Accra Main Campus</p>
                 <p>Ring Road East, Danquah Circle, Osu, Accra, Ghana</p>
@@ -31,7 +31,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-center space-x-3">
-              <Phone className="w-5 h-5 text-red-600 flex-shrink-0" />
+              <Phone className="w-5 h-5 text-red-600 shrink-0" />
               <div>
                 <p className="font-semibold text-gray-800">Direct Lines</p>
                 <p>+233 30 290 0000 / +233 24 400 1122</p>
@@ -39,7 +39,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-center space-x-3">
-              <Mail className="w-5 h-5 text-red-600 flex-shrink-0" />
+              <Mail className="w-5 h-5 text-red-600 shrink-0" />
               <div>
                 <p className="font-semibold text-gray-800">Email Support</p>
                 <p>admissions@aspiretuition.edu.gh</p>
@@ -47,7 +47,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-start space-x-3">
-              <Clock className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+              <Clock className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-gray-800">Office Hours</p>
                 <p>Mon - Fri: 8:00 AM - 6:00 PM | Sat: 8:00 AM - 4:00 PM</p>
