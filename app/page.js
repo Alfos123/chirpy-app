@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Navbar from "@/components/Navbar";
+import HeroCarousel from "@/components/HeroCarousel";
 import { FaGraduationCap } from "react-icons/fa6";
 import { FaCalendarCheck } from "react-icons/fa";
 import { FaChartBar } from "react-icons/fa";
@@ -43,6 +45,7 @@ export default function Home(){
   const selectedTab = intakeTabs[activeTab];
 
   return (
+<<<<<<< HEAD
     <main id="home">
       <nav className="items-end md:flex gap-8">
           <a href="#home" className="hover:text-blue-900 transition">Home</a>
@@ -73,6 +76,12 @@ export default function Home(){
           </div>
         </section>
         <section className="-mt-1">
+=======
+    <main className="min-h-screen bg-white">
+      <Navbar />
+      <HeroCarousel />
+      <section className="-mt-1">
+>>>>>>> e2bb7d4e5cdf60f5af2686fcf29379dd54bedaac
           <div  className="flex flex-col md:flex-row gap-4 justify-evenly text-center bg-blue-900 text-white py-20">
           <div>
             <p className="text-3xl font-bold">2,000+</p>
